@@ -1,6 +1,13 @@
 ---
-  - hosts: demo
-    user: ansible
-    become: yes
-    connection: ssh
-    gather_facts: yes
+- hosts: all
+  become: yes
+  tasks: 
+  - name: i want to install git
+    apt:
+      name: git
+      state: present
+
+  - name: i want to install tree
+    apt:  
+      name: tree
+      state: present
